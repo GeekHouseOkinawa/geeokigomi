@@ -1,0 +1,2 @@
+worker: python geeokigomi.py
+
