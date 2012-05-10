@@ -16,6 +16,7 @@ api = tweepy.API(auth_handler=auth)
 
 dt = datetime.date.today()
 string = u"@cota2n @gliese @_ringogirl @hanachin_ @kimihito_ "
+string = u"@hanachin_ "
 
 if dt.weekday() == 0:
   string += u"今日は燃えるゴミの日ですよ！"
