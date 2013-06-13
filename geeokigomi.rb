@@ -4,9 +4,12 @@ require 'rubygems'
 require 'bundler/setup'
 
 require 'active_support/all'
+require 'weather_jp'
 require 'twitter'
 
 class GeeokiGomi
+  ADDRESS = :naha
+
   # TODO: Web UI for manage Geeoki people accounts
   def accounts
     %w(tompng gliese035 hanachin_ kimihito_)
@@ -25,8 +28,12 @@ class GeeokiGomi
     end
   end
 
+  def weather
+    WeatherJp.get(ADDRESS).today.to_s
+  end
+
   def message
-    "#{accounts.map {|n| "@#{n}"}.join ' '} #{gomi_message}"
+    "#{accounts.map {|n| "@#{n}"}.join ' '} #{gomi_message} #{weather}"
   end
 end
 
