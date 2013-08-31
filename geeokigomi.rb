@@ -12,7 +12,7 @@ class GeeokiGomi
 
   # TODO: Web UI for manage Geeoki people accounts
   def accounts
-    %w(tompng gliese035 hanachin_ kimihito_)
+    (ENV['RESIDENTS'] || "tompng gliese035 hanachin_ kimihito_").split(" ")
   end
 
   # TODO: Fix GOMI schedule
